@@ -59,12 +59,12 @@ if ctrl.boolgait == 1
 %     mov.Yspeed = [0 0 0 0].*multiplier(mov.GaitType);
 %     mov.Rspeed = [0 0 0 0].*multiplier(mov.GaitType);
 
-    fun.body.bodyRotX = @(j,k,Nsteps,Nloops) 0*pi/10*sin(j/Nsteps*2*pi);
-    fun.body.bodyRotY = @(j,k,Nsteps,Nloops) 0*pi/10*cos(j/Nsteps*2*pi);
-    fun.body.bodyRotZ = @(j,k,Nsteps,Nloops) 0*pi/10*sin(j/Nsteps*2*pi);
-    fun.body.bodyPosX = @(j,k,Nsteps,Nloops) 0*40*cos(j/Nsteps*2*pi);
-    fun.body.bodyPosY = @(j,k,Nsteps,Nloops) 0*60*sin(j/Nsteps*2*pi);
-    fun.body.bodyPosZ = @(j,k,Nsteps,Nloops) 0*(60*cos(j/Nsteps*2*pi));
+    fun.body.bodyRotX = @(j,k,Nsteps,Nloops) 1000*pi/10*sin(j/Nsteps*2*pi);
+    fun.body.bodyRotY = @(j,k,Nsteps,Nloops) 1000*pi/10*cos(j/Nsteps*2*pi);
+    fun.body.bodyRotZ = @(j,k,Nsteps,Nloops) 1000*pi/10*sin(j/Nsteps*2*pi);
+    fun.body.bodyPosX = @(j,k,Nsteps,Nloops) 1000*40*cos(j/Nsteps*2*pi);
+    fun.body.bodyPosY = @(j,k,Nsteps,Nloops) 1000*60*sin(j/Nsteps*2*pi);
+    fun.body.bodyPosZ = @(j,k,Nsteps,Nloops) 1000*(60*cos(j/Nsteps*2*pi));
     
     fun.body.absbodyPosX = @(j,k,Nsteps,Nloops) 0*40*cos(j/Nsteps*2*pi);
     fun.body.absbodyPosY = @(j,k,Nsteps,Nloops) 0*40*sin(j/Nsteps*2*pi);

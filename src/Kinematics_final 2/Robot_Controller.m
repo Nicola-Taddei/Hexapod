@@ -87,6 +87,8 @@ v(s.UserData.NumBytestoArb) = 255-mod(sum(v(2:s.UserData.NumBytestoArb-1)),256);
 
 write(s,v,"uint8");
 
+disp("Eccoci")
+
 % SentData(:,(k-1)*temp.gaitData.stepsInCycle+j) = v(2:s.UserData.NumBytes-1);
 
 %% Waiting for response

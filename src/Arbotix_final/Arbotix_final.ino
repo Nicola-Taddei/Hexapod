@@ -34,16 +34,18 @@ float Bias;     // for the calibration of the yaw angle
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55);     // IMU initialization
 
-
+int led = 0;
 
 void setup(){
-  pinMode(0,OUTPUT);
+  pinMode(led,OUTPUT);
   pinMode(A0,INPUT);     // this are the 6 FSR sensors
   pinMode(A1,INPUT);
   pinMode(A2,INPUT);
   pinMode(A3,INPUT);
   pinMode(A4,INPUT);
   pinMode(A5,INPUT);
+
+  digitalWrite(led, LOW);
   
   setupIK();     // set the initial position when the robot is turned on
   
@@ -68,6 +70,7 @@ void setup(){
   
   if(!bno.begin())     // check if the imu is working
   {
+    digitalWrite(led, HIGH);
     while(1);
   }
   bno.setExtCrystalUse(true);

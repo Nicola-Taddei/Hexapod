@@ -25,16 +25,16 @@ temp.body.absbodyPosX = 0;
 temp.body.absbodyPosY = 0;
 temp.body.absbodyPosZ = 0;
 
-% % temp.body.bodyRotX = fun.body.bodyRotX(1,1,1,1); %from Position_and_Control
-% % temp.body.bodyRotY = fun.body.bodyRotY(1,1,1,1);
-% % temp.body.bodyRotZ = fun.body.bodyRotZ(1,1,1,1);
-% % temp.body.bodyPosX = fun.body.bodyPosX(1,1,1,1);
-% % temp.body.bodyPosY = fun.body.bodyPosY(1,1,1,1);
-% % temp.body.bodyPosZ = fun.body.bodyPosZ(1,1,1,1);
-% % 
-% % temp.body.absbodyPosX = fun.body.absbodyPosX(1,1,1,1);
-% % temp.body.absbodyPosY = fun.body.absbodyPosY(1,1,1,1);
-% % temp.body.absbodyPosZ = fun.body.absbodyPosZ(1,1,1,1);
+% temp.body.bodyRotX = fun.body.bodyRotX(1,1,1,1); %from Position_and_Control
+% temp.body.bodyRotY = fun.body.bodyRotY(1,1,1,1);
+% temp.body.bodyRotZ = fun.body.bodyRotZ(1,1,1,1);
+% temp.body.bodyPosX = fun.body.bodyPosX(1,1,1,1);
+% temp.body.bodyPosY = fun.body.bodyPosY(1,1,1,1);
+% temp.body.bodyPosZ = fun.body.bodyPosZ(1,1,1,1);
+% 
+% temp.body.absbodyPosX = fun.body.absbodyPosX(1,1,1,1);
+% temp.body.absbodyPosY = fun.body.absbodyPosY(1,1,1,1);
+% temp.body.absbodyPosZ = fun.body.absbodyPosZ(1,1,1,1);
 
 temp.firstiter = 1;
 run('Inverse_Kinematics')

@@ -10,13 +10,13 @@ pause(1)
 
 %% Control Panel
 
-ctrl.control = 0; % Set to 1 to control the robot while the simulation plays
+ctrl.control = 1; % Set to 1 to control the robot while the simulation plays
 
 ctrl.boolanimate = 1; % Set to 1 to get the robot animated
 ctrl.boolplot = 0; % Set to 1 to plot the robot
 
-ctrl.boolgait = 1; % Set to 1 to get gait (predefined) movement, choose this or the following, not together
-ctrl.boolP = 0; % Set to 1 to get P-controlled movementh, choose this or the previous one, not together
+ctrl.boolgait = 0; % Set to 1 to get gait (predefined) movement, choose this or the following, not together
+ctrl.boolP = 1; % Set to 1 to get P-controlled movements, choose this or the previous one, not together
 
 
 ctrl.showfeet = 1; % Set to 1 to put markers on leg endpoints
@@ -43,7 +43,7 @@ ctrl.nobounce = 1; % System to prevent animation from bouncing due to legs raisi
 
 %% Initializing
 
-% run('Position_and_Movement')
+run('Position_and_Movement')
 run('Robot_Data')
 run('Data_Initialization')
 
