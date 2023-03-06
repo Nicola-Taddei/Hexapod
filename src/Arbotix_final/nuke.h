@@ -59,7 +59,7 @@ typedef struct{
   double Z;
 } inv_ik_sol_t;
 
-/* Standard posisions */
+/* Standard positions */
 extern ik_req_t endpoints[LEG_COUNT];
 
 

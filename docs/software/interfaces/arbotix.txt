@@ -1,0 +1,79 @@
+The ArbotiX-M exchanges the following informations through Serial communication (Wireless if a XBee module if connected. The software does not distinguish USB port 
+and XBee module, both being serial devices):
+
+INCOMING:   packet of 27 bytes
+    [
+        255, # signals start of communication
+
+        X_LEFT_FRONT,  # endpoints position with respect to rest pose with a 128 offset, that allow to indicate both positive and negative positions through a positive variable
+        Y_LEFT_FRONT,
+        Z_LEFT_FRONT,
+
+        X_RIGHT_FRONT,
+        Y_RIGHT_FRONT,
+        Z_RIGHT_FRONT,
+
+        X_LEFT_MIDDLE,
+        Y_LEFT_MIDDLE,
+        Z_LEFT_MIDDLE,
+
+        X_RIGHT_MIDDLE,
+        Y_RIGHT_MIDDLE,
+        Z_RIGHT_MIDDLE,
+
+        X_LEFT_REAR,
+        Y_LEFT_REAR,
+        Z_LEFT_REAR,
+
+        X_RIGHT_REAR,
+        Y_RIGHT_REAR,
+        Z_RIGHT_REAR,
+
+        TRANTIME,   # duration of the requested movement [ms]
+
+        leglowering[LEFT_FRONT],   # 1 if lowering, else 0
+        leglowering[RIGHT_FRONT],
+        leglowering[LEFT_MIDDLE],
+        leglowering[RIGHT_MIDDLE],
+        leglowering[LEFT_REAR],
+        leglowering[RIGHT_REAR],
+
+        ad hoc byte that makes the total checksum be 255 (checksum = sum(elements[1:27]%256))
+    ]
+
+OUTPUT:    packet of 33 bytes
+
+    [254]*33 if first incoming byte wasn't 255
+
+    [253]*33 if checsum wrong
+
+    [
+        X_LEFT_FRONT,
+        Y_LEFT_FRONT,
+        Z_LEFT_FRONT,
+
+        ...
+
+        voltage*10,
+
+        floor(x_orientation/10),
+        (x_orientation/10 - floor(x_orientation/10))*100,
+
+        floor(y_orientation/10),
+        (y_orientation/10 - floor(y_orientation/10))*100,
+
+        floor(z_orientation/10),
+        (z_orientation/10 - floor(z_orientation/10))*100,
+
+        FSR[LEFT_FRONT],
+        
+        ...
+
+        checksum,   # 255 - sum(bytes)%256
+        255   # end of communication
+    ]
+
+
+
+The ArbotiX-M divides the requested movents into substeps that are supposed to be completed in about 1/30 seconds each. 
+There is no direct control of the frequency at which the function interpolateStep is called, so every change in the number of instructions in the loop function change the gate speed
