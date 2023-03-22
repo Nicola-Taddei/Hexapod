@@ -8,7 +8,7 @@ class MinimalSubscriber(Node):
 
     def __init__(self):
         super().__init__('my_subscriber')
-        self.subscriber_ = self.create_subscriber(String, 'my_topic', self.listener_callback, 1)
+        self.subscriber_ = self.create_subscription(String, 'my_topic', self.listener_callback, 1)
         self.subscription
 
     def listener_callback(self, msg):
