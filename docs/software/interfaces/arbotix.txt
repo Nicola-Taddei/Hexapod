@@ -75,7 +75,7 @@ OUTPUT:    packet of 33 bytes
 
 
 
-The ArbotiX-M divides the requested movents into substeps that are supposed to be completed in about 1/30 seconds each. 
+The ArbotiX-M divides the requested movements into substeps that are supposed to be completed in about 1/30 seconds each. 
 There is no direct control of the frequency at which the function interpolateStep is called, so every change in the number of instructions in the loop function change the gate speed
 Lowering legs are moved at half the speed and stop when FSR sensors register contact with the ground.
 It is essential that the forward movement is completed before the lowering legs make contact with the ground of else they woud be dragged.
