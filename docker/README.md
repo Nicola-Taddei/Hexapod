@@ -1,0 +1,1 @@
+We run ROS2 on a docker container in order to be less dependent from Jetson Nano's OS and avoid conflicts with other sotware's dependencies
